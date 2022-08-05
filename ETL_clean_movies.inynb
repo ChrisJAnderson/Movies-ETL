@@ -71,9 +71,18 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 10,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (2948006936.py, line 34)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;36m  File \u001b[1;32m\"C:\\Users\\chris\\AppData\\Local\\Temp\\ipykernel_8172\\2948006936.py\"\u001b[1;36m, line \u001b[1;32m34\u001b[0m\n\u001b[1;33m    print (f'{e} for {wikiMoviesDf['title']}')\u001b[0m\n\u001b[1;37m                                        ^\u001b[0m\n\u001b[1;31mSyntaxError\u001b[0m\u001b[1;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
    "source": [
     "# 2 Add the function that takes in three arguments;\n",
     "# Wikipedia data, Kaggle metadata, and MovieLens rating data (from Kaggle)\n",
@@ -107,8 +116,8 @@
     "        wikiMoviesDf['imdb_id']=wikiMoviesDf['imdb_link'].str.extract(r'(tt\\d{7})')\n",
     "        wikiMoviesDf.drop_duplicates(subset='imdb_id', inplace=True)\n",
     "        \n",
-    "    except:\n",
-    "        print (wikiMoviesDf['imdb_link'])\n",
+    "    except Exception as e: \n",
+    "        print (e)\n",
     "\n",
     "    #  7. Write a list comprehension to keep the columns that don't have null values from the wiki_movies_df DataFrame.\n",
     "    wikiColumnsDropNA=[column for column in wikiMoviesDf.columns if wikiMoviesDf[column].isnull().sum()<len(wikiMoviesDf)*0.9]\n",
