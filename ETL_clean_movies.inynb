@@ -246,7 +246,7 @@
    "outputs": [],
    "source": [
     "# 19. Set the wiki_movies_df equal to the wiki_file variable. \n",
-    "wikiMovies = wikiMoviesDf"
+    "wikiMoviesDf=wikiMovies"
    ]
   },
   {
